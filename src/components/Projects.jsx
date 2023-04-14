@@ -7,18 +7,22 @@ const projects = [
         {
             title: "Task Manager",
             tech: ["VueJs", "ExpressJs", "MongoDB"],
+            link: "https://github.com/dredawkins11/task-manager-frontend"
         },
         {
             title: "Budget App",
             tech: ["ReactJs", "ExpressJs", "MongoDB"],
+            link: "https://github.com/dredawkins11/budget-app"
         },
         {
             title: "Weather Tracker",
             tech: ["ReactJs", "ExpressJs", "MongoDB"],
+            link: "https://github.com/dredawkins11/city-weather-tracker"
         },
         {
             title: "Habit Tracker",
             tech: ["ReactJs", "ExpressJs", "MongoDB"],
+            link: "https://github.com/dredawkins11/work-day-scheduler"
         },
     ],
 ];
