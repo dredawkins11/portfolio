@@ -1,0 +1,17 @@
+@use "sass:color";
+
+$black: #0a090c;
+$white: rgb(239, 239, 239);
+$primary: #af125a;
+$accent: #ab87ff;
+
+@function evenLineHeight($fontSize) {
+    $lineHeightPercent: 0.26;
+    $fontDifference: $lineHeightPercent * $fontSize;
+    @return $fontSize - $fontDifference;
+}
+
+@function changeThemeOpacity($opacity) {
+    $newColor: "rgba(#{var(--theme-rgb)}, #{$opacity})";
+    @return var(--theme-rgb);
+}
