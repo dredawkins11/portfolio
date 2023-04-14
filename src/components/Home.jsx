@@ -7,9 +7,9 @@ const Home = () => {
     return (
         <section className={classes.homeContainer}>
             <div className={classes.linkContainer}>
-                <Link to="/about">About</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/contact">Contact</Link>
+                <Link to="/portfolio/about">About</Link>
+                <Link to="/portfolio/projects">Projects</Link>
+                <Link to="/portfolio/contact">Contact</Link>
             </div>
             <p className={classes.bottomCaption}>full stack web development</p>
         </section>

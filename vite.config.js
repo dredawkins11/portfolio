@@ -9,5 +9,5 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly'
     }
   },
-  base: "./"
+  base: "https://dredawkins11.github.io/portfolio"
 })

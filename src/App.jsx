@@ -20,8 +20,9 @@ function App() {
 
     const location = useLocation();
     useEffect(() => {
-        let pageName = location.pathname.slice(1);
-        if (!pageName) pageName = "home";
+        const pages = ["home", "about", "contact", "projects"]
+        let pageName = location.pathname.split("portfolio/")[1];
+        if (!pages.includes(pageName)) pageName = "home";
         setActivePage(pageName);
     }, [location]);
 
@@ -47,7 +48,7 @@ function App() {
             <header className={classes.header}>
                 <div className={classes.topMenuContainer}>
                     <div className={classes.activePage}>{activePage}</div>
-                    <Link to="/" className={classes.backToHome}>
+                    <Link to="portfolio/" className={classes.backToHome}>
                         back to home
                     </Link>
                 </div>
@@ -72,11 +73,11 @@ function App() {
             </aside>
             <div className={classes.contentContainer}>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/project/:id" element={<SingleProject />} />
+                    <Route path="portfolio/" element={<Home />} />
+                    <Route path="portfolio/about" element={<About />} />
+                    <Route path="portfolio/contact" element={<Contact />} />
+                    <Route path="portfolio/projects" element={<Projects />} />
+                    <Route path="portfolio/project/:id" element={<SingleProject />} />
                 </Routes>
             </div>
         </div>
