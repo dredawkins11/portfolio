@@ -5,7 +5,7 @@ const useCanvas = draw => {
   const canvasRef = useRef(null)
   
   useEffect(() => {
-    
+    console.log("adding something")
     const canvas = canvasRef.current
     const context = canvas.getContext('2d')
     let frameCount = 0
