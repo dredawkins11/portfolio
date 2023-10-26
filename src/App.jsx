@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 import classes from "./App.module.scss";
-console.log(classes);
+import Background from "./components/Background";
 
 function App() {
     const [activePage, setActivePage] = useState("home");
@@ -44,7 +44,7 @@ function App() {
 
     return (
         <div className={classes.app} style={theme}>
-            <div className={classes.nameTitle}>DREVAYNE DAWKINS</div>
+            {/* <div className={classes.nameTitle}>DREVAYNE DAWKINS</div>
             <header className={classes.header}>
                 <div className={classes.topMenuContainer}>
                     <div className={classes.activePage}>{activePage}</div>
@@ -79,7 +79,8 @@ function App() {
                     <Route path="portfolio/projects" element={<Projects />} />
                     <Route path="portfolio/project/:id" element={<SingleProject />} />
                 </Routes>
-            </div>
+            </div> */}
+            <Background />
         </div>
     );
 }
