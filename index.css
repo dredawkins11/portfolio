@@ -1,0 +1,47 @@
+@use "./styles/variables";
+
+* {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    fill: inherit;
+    stroke: inherit;
+    box-sizing: inherit;
+    font-family: 'Urbanist', sans-serif;
+    cursor: url("./assets/cursor.png") 5 5, crosshair;
+    z-index: 5;
+    background: none;
+    user-select: none;
+
+    :hover {
+        cursor: url("./assets/cursor.png") 5 5, crosshair;
+    }
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 8px;
+}
+
+
+// /* width */
+// ::-webkit-scrollbar {
+//     width: 5px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 5px grey;
+//     border-radius: 10px;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//     background: red;
+//     border-radius: 10px;
+// }
