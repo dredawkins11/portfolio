@@ -222,6 +222,11 @@ const particleSystem: ParticleSystem = {
         );
         this.mouse.vy = clamp(this.mouse.y / rowHeight, 0, this.rows, true);
     },
+    handleTouch() {
+        if (this.currentRipple[this.mouse.vx] != undefined) {
+            this.currentRipple[this.mouse.vx][this.mouse.vy] = 3;
+        }
+    },
 };
 
 // setInterval(() => {

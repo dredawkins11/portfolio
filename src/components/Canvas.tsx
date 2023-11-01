@@ -11,8 +11,7 @@ interface CanvasProps {
 
 const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const theme = useTheme()
-    
+    const theme = useTheme();
 
     const draw = useCallback(
         (ctx: CanvasRenderingContext2D) => {
@@ -45,15 +44,28 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
         if (containerBounds != undefined) Particles.handleMouseUp();
     };
 
-    const handleMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent) => {
         if (containerBounds != undefined)
             Particles.handleMove(e.clientX, e.clientY, containerBounds);
     };
 
+    const handleTouch = (e: TouchEvent) => {
+        if (containerBounds != undefined) console.log(e);
+        if (e.changedTouches.length > 0) {
+            Particles.handleMove(
+                e.changedTouches[0].clientX,
+                e.changedTouches[0].clientY,
+                containerBounds
+            );
+            Particles.handleTouch();
+        }
+    };
+
     useEffect(() => {
-        window.addEventListener("mousedown", () => handleMouseDown())
-        window.addEventListener("mouseup", () => handleMouseUp())
-        window.addEventListener("mousemove", (e) => handleMove(e))
+        window.addEventListener("mousedown", () => handleMouseDown());
+        window.addEventListener("mouseup", () => handleMouseUp());
+        window.addEventListener("mousemove", (e) => handleMouseMove(e));
+        window.addEventListener("touchend", (e) => handleTouch(e));
 
         const canvas = canvasRef.current;
         const context = canvas?.getContext("2d", { willReadFrequently: true });
