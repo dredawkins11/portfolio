@@ -1,5 +1,14 @@
 import { Menu } from "@mui/icons-material";
-import { Box, Button, Drawer, IconButton, Stack, Typography, styled } from "@mui/joy";
+import {
+    Box,
+    Button,
+    Drawer,
+    IconButton,
+    Link,
+    Stack,
+    Typography,
+    styled,
+} from "@mui/joy";
 import { useState } from "react";
 
 interface NavBarProps {
@@ -7,12 +16,15 @@ interface NavBarProps {
 }
 
 const NavLink = styled(Typography)(({ theme }) => ({
-    [theme.breakpoints.down("md")]: {display: "none"},
+    [theme.breakpoints.down("md")]: { display: "none" },
     ...theme.typography.h3,
+    "&:hover": {
+        transform: `translateY(-${theme.spacing(0.5)})`,
+        color: theme.vars.palette.neutral.plainHoverColor,
+    },
 }));
 
 const NavBar = ({ onScroll }: NavBarProps) => {
-
     return (
         <Box
             position="fixed"
@@ -42,7 +54,11 @@ const NavBar = ({ onScroll }: NavBarProps) => {
                 <NavLink onClick={() => onScroll("about")}>About</NavLink>
                 <NavLink onClick={() => onScroll("projects")}>Projects</NavLink>
                 <NavLink onClick={() => onScroll("contact")}>Contact</NavLink>
-            <Button variant="outlined" size="sm">RESUME</Button>
+                <Link>
+                    <Button variant="outlined" size="sm">
+                        RESUME
+                    </Button>
+                </Link>
             </Stack>
         </Box>
     );

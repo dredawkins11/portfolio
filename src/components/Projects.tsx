@@ -24,7 +24,7 @@
 // ];
 
 import { Launch, GitHub } from "@mui/icons-material";
-import { Box, Card, IconButton, Stack, Typography, styled } from "@mui/joy";
+import { Box, Card, IconButton, Link, Stack, Typography, styled } from "@mui/joy";
 import { forwardRef } from "react";
 
 const ProjectCard = styled(Card)(({ theme }) => ({
@@ -73,16 +73,16 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                             01.
                         </Typography>
                         <Box>
-                            <a href="#">
+                            <Link href="#">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link href="#">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
-                            </a>
+                            </Link>
                         </Box>
                     </Stack>
                     <Typography level="h3">Project 1</Typography>
@@ -98,16 +98,16 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                             02.
                         </Typography>
                         <Box>
-                            <a href="#">
+                            <Link href="#">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link href="#">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
-                            </a>
+                            </Link>
                         </Box>
                     </Stack>
                     <Typography level="h3">Project 2</Typography>
@@ -123,16 +123,16 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                             03.
                         </Typography>
                         <Box>
-                            <a href="#">
+                            <Link href="#">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link href="#">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
-                            </a>
+                            </Link>
                         </Box>
                     </Stack>
                     <Typography level="h3">Project 3</Typography>

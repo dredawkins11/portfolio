@@ -1,5 +1,5 @@
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import { IconButton, Stack, Typography } from "@mui/joy";
+import { IconButton, Link, Stack, Typography } from "@mui/joy";
 
 const SideDecorations = () => {
     return (
@@ -29,7 +29,7 @@ const SideDecorations = () => {
             })}
         >
             <Stack>
-                <a href="#">
+                <Link href="mailto:dredawkins11@gmail.com">
                     <Typography
                         sx={{
                             writingMode: "vertical-rl",
@@ -39,20 +39,20 @@ const SideDecorations = () => {
                     >
                         dredawkins11@gmail.com
                     </Typography>
-                </a>
+                </Link>
                 <div></div>
             </Stack>
             <Stack>
-                <a href="#">
+                <Link href="https://github.com/dredawkins11">
                     <IconButton>
                         <GitHub />
                     </IconButton>
-                </a>
-                <a href="#">
+                </Link>
+                <Link href="https://www.linkedin.com/in/drevayne-dawkins/">
                     <IconButton>
                         <LinkedIn />
                     </IconButton>
-                </a>
+                </Link>
                 <div></div>
             </Stack>
         </Stack>

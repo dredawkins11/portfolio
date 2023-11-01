@@ -1,8 +1,12 @@
+import { GitHub, LinkedIn } from "@mui/icons-material";
 import {
     Box,
+    Button,
     FormControl,
     FormLabel,
+    IconButton,
     Input,
+    Link,
     Stack,
     Textarea,
     Typography,
@@ -37,20 +41,34 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             >
                 <div></div>
                 <Typography level="h1">CONTACT</Typography>
+                <div></div>
             </Stack>
-            <Stack gap={1}>
-                <FormControl>
-                    <FormLabel>NAME</FormLabel>
-                    <Input name="name" />
-                </FormControl>
-                <FormControl>
-                    <FormLabel>EMAIL</FormLabel>
-                    <Input name="email" />
-                </FormControl>
-                <FormControl>
-                    <FormLabel>MESSAGE</FormLabel>
-                    <Textarea minRows={4} name="message" />
-                </FormControl>
+            <Stack gap={3} alignItems="center">
+                <Typography level="body-lg" textAlign="center" width={1}>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Fuga iste ex velit, cupiditate officiis distinctio beatae
+                    quisquam molestias suscipit atque. Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Sequi repellat enim
+                    molestias minus tempore ratione at sint et itaque
+                    aspernatur!
+                </Typography>
+                <Stack direction="row" sx={(theme) => ({
+                    [theme.breakpoints.up("md")]: {display: "none"}
+                })}>
+                    <Link href="https://github.com/dredawkins11">
+                        <IconButton>
+                            <GitHub />
+                        </IconButton>
+                    </Link>
+                    <Link>
+                        <IconButton>
+                            <LinkedIn />
+                        </IconButton>
+                    </Link>
+                </Stack>
+                <Link href="mailto:dredawkins11@gmail.com">
+                <Button>Reach Out</Button>
+                </Link>
             </Stack>
         </Box>
     );

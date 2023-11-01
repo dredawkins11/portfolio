@@ -70,8 +70,8 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
                         <Typography level="body-lg">JavaScript</Typography>
                         <Typography level="body-lg">TypeScript</Typography>
                         <Typography level="body-lg">React</Typography>
-                        <Typography level="body-lg">NodeJS</Typography>
                         <Typography level="body-lg">ExpressJS</Typography>
+                        <Typography level="body-lg">GraphQL</Typography>
                         <Typography level="body-lg">MongoDB</Typography>
                     </Box>
                 </Stack>

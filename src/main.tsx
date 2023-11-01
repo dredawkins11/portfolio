@@ -17,7 +17,7 @@ const theme = extendTheme({
         dark: {
             palette: {
                 background: {
-                    backdrop: "rgba(0,0,0,0.9)",
+                    backdrop: "rgba(0,0,0,0.8)",
                 },
                 primary: {
                     "50": "#fde7f1",
@@ -31,6 +31,9 @@ const theme = extendTheme({
                     "800": "#5e082f",
                     "900": "#2f0417",
                 },
+                neutral: {
+                    "plainHoverColor": "var(--joy-palette-primary-400)"
+                }
             },
         },
     },
@@ -58,13 +61,33 @@ const theme = extendTheme({
                 }),
             },
         },
+        JoyLink: {
+            styleOverrides:{
+                root: ({theme}) => ({
+                    color: theme.vars.palette.text.primary,
+                    "&:hover": {
+                        transform: `translateY(-${theme.spacing(.5)})`,
+                        color: theme.vars.palette.neutral.plainHoverColor,
+                        textDecorationLine: "none",
+                    },
+                }),
+            },
+            defaultProps: {
+                target: "_blank",
+            },
+        },
+        JoyIconButton: {
+            styleOverrides:{
+                root: {"&:hover": {background: "none"}}
+            }
+        }
     },
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <CssVarsProvider defaultMode="system" theme={theme}>
-            <GlobalStyles styles={{ html: { scrollBehavior: "smooth" } }} />
+            <GlobalStyles styles={{ "*": {transition: "transform .2s"} ,html: { scrollBehavior: "smooth" } }} />
             <CssBaseline />
             <App />
         </CssVarsProvider>
