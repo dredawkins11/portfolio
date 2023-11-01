@@ -30,43 +30,53 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
                 <div></div>
                 <Typography level="h1">ABOUT</Typography>
             </Stack>
-            <Card sx={{padding: 3}}>
+            <Card sx={{ padding: 3 }}>
                 <Stack gap={3}>
                     <Typography level="body-lg">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Corporis veritatis cum eveniet iusto placeat corrupti
-                        debitis similique rerum quo necessitatibus illum,
-                        perspiciatis exercitationem ea voluptatem architecto
-                        amet asperiores omnis odit, incidunt beatae rem modi
-                        quaerat expedita!
+                        Hi, my name is <Typography>Drevayne!</Typography> I'm a passionate <Typography>full-stack web
+                        developer</Typography> on a mission to transform ideas into
+                        captivating, one-of-a-kind websites. With a creative
+                        flair and a love for <Typography>problem-solving</Typography>, I thrive on
+                        crafting digital experiences that exceed expectations.
+                    </Typography>
+                    <Typography>
+                        My journey in the world of web development has allowed
+                        me to combine <Typography>cutting-edge</Typography> technology with a keen eye
+                        for <Typography>design</Typography>, resulting in a portfolio of projects that
+                        I'm proud to share with you. Whether it's building a
+                        sleek e-commerce platform or creating a dynamic personal
+                        blog, I'm dedicated to turning your <Typography>vision</Typography> into a
+                        reality.
                     </Typography>
                     <Typography level="body-lg">
                         Here's what I've working with lately:
                     </Typography>
-                    <Box sx={(theme) => ({
-                        display: "flex",
-                        justifyContent: "space-between",
-                        textAlign: "center",
-                        flexWrap: "wrap",
+                    <Box
+                        sx={(theme) => ({
+                            display: "flex",
+                            justifyContent: "space-between",
+                            textAlign: "center",
+                            flexWrap: "wrap",
 
-                        "& .MuiTypography-root": {
-                            width: "30%",
-                            marginTop: 1,
-                            flexGrow: 1,
-                            fontWeight: "bold",
-                            [theme.breakpoints.down("md")]: {
-                                width: "50%"
-                            },
-                            [theme.breakpoints.down("sm")] : {
-                                fontSize: theme.fontSize.sm
-                            },
+                            "& .MuiTypography-root": {
+                                width: "30%",
+                                marginTop: 1,
+                                flexGrow: 1,
+                                fontWeight: "bold",
+                                [theme.breakpoints.down("md")]: {
+                                    width: "50%",
+                                },
+                                [theme.breakpoints.down("sm")]: {
+                                    fontSize: theme.fontSize.sm,
+                                },
 
-                            "&::before": {
-                                content: "'▹ '",
-                                color: theme.vars.palette.primary.plainColor
-                            }
-                        }
-                    })}>
+                                "&::before": {
+                                    content: "'▹ '",
+                                    color: theme.vars.palette.primary[500],
+                                },
+                            },
+                        })}
+                    >
                         <Typography level="body-lg">JavaScript</Typography>
                         <Typography level="body-lg">TypeScript</Typography>
                         <Typography level="body-lg">React</Typography>

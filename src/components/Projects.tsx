@@ -24,10 +24,21 @@
 // ];
 
 import { Launch, GitHub } from "@mui/icons-material";
-import { Box, Card, IconButton, Link, Stack, Typography, styled } from "@mui/joy";
+import {
+    Box,
+    Card,
+    IconButton,
+    Link,
+    Stack,
+    Typography,
+    styled,
+} from "@mui/joy";
 import { forwardRef } from "react";
 
 const ProjectCard = styled(Card)(({ theme }) => ({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     flexGrow: 1,
     backgroundColor: theme.palette.background.backdrop,
     backdropFilter: "blur(3px)",
@@ -73,74 +84,98 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                             01.
                         </Typography>
                         <Box>
-                            <Link href="#">
+                            <Link href="https://simple-note-frontend.onrender.com/">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
                             </Link>
-                            <Link href="#">
+                            <Link href="https://github.com/dredawkins11/simple-note">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
                             </Link>
                         </Box>
                     </Stack>
-                    <Typography level="h3">Project 1</Typography>
-                    <Typography level="body-md">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Magni corrupti optio, voluptatum id eligendi
-                        incidunt ducimus necessitatibus earum illum rerum!
-                    </Typography>
+                    <Box flexGrow={1}>
+                        <Typography level="h3">Simple Note</Typography>
+                        <Typography level="body-md">
+                            A simple full-stack note taking application. Users
+                            can create accounts to store notes, as well as
+                            create, update, and delete these notes.
+                        </Typography>
+                    </Box>
+                    <Stack direction="row" justifyContent="space-between">
+                        <Typography level="body-sm">React</Typography>
+                        <Typography level="body-sm">GraphQL</Typography>
+                        <Typography level="body-sm">MongoDB</Typography>
+                    </Stack>
                 </ProjectCard>
                 <ProjectCard>
                     <Stack flexDirection="row" justifyContent="space-between">
                         <Typography level="body-lg" color="neutral">
-                            02.
+                            01.
                         </Typography>
                         <Box>
-                            <Link href="#">
+                            <Link href="https://stellar-sherbet-616974.netlify.app/">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
                             </Link>
-                            <Link href="#">
+                            <Link href="https://github.com/dredawkins11/questline">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
                             </Link>
                         </Box>
                     </Stack>
-                    <Typography level="h3">Project 2</Typography>
-                    <Typography level="body-md">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Magni corrupti optio, voluptatum id eligendi
-                        incidunt ducimus necessitatibus earum illum rerum!
-                    </Typography>
+                    <Box flexGrow={1}>
+                        <Typography level="h3">Questline</Typography>
+                        <Typography level="body-md">
+                            Questline is a web app with the aim of simplifying
+                            complex tasks. The app is modeled to represent tasks
+                            as 'Quests', and it will break down those quests to
+                            make them simpler to complete. The app leverages
+                            OpenAI's ChatGBT to generate content.
+                        </Typography>
+                    </Box>
+                    <Stack direction="row" justifyContent="space-between">
+                        <Typography level="body-sm">React</Typography>
+                        <Typography level="body-sm">OpenAI</Typography>
+                        <Typography level="body-sm">ExpressJS</Typography>
+                    </Stack>
                 </ProjectCard>
                 <ProjectCard>
                     <Stack flexDirection="row" justifyContent="space-between">
                         <Typography level="body-lg" color="neutral">
-                            03.
+                            01.
                         </Typography>
                         <Box>
-                            <Link href="#">
+                            <Link href="https://amazing-sopapillas-20c13f.netlify.app/">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
                             </Link>
-                            <Link href="#">
+                            <Link href="https://github.com/dredawkins11/meranda_art">
                                 <IconButton>
                                     <GitHub />
                                 </IconButton>
                             </Link>
                         </Box>
                     </Stack>
-                    <Typography level="h3">Project 3</Typography>
-                    <Typography level="body-md">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Magni corrupti optio, voluptatum id eligendi
-                        incidunt ducimus necessitatibus earum illum rerum!
-                    </Typography>
+                    <Box flexGrow={1}>
+                        <Typography level="h3">Meranda Art</Typography>
+                        <Typography level="body-md">
+                            A mock up site for an artists portfolio. The site
+                            represents what could be an elegant website for
+                            showcasing and artists work along with an e-commerce
+                            addition.
+                        </Typography>
+                    </Box>
+                    <Stack direction="row" justifyContent="space-between">
+                        <Typography level="body-sm">HTML</Typography>
+                        <Typography level="body-sm">CSS</Typography>
+                        <Typography level="body-sm">JavaScript</Typography>
+                    </Stack>
                 </ProjectCard>
             </Box>
         </Box>

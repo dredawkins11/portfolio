@@ -1,16 +1,5 @@
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import {
-    Box,
-    Button,
-    FormControl,
-    FormLabel,
-    IconButton,
-    Input,
-    Link,
-    Stack,
-    Textarea,
-    Typography,
-} from "@mui/joy";
+import { Box, Button, IconButton, Link, Stack, Typography } from "@mui/joy";
 import { forwardRef } from "react";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
@@ -45,16 +34,17 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             </Stack>
             <Stack gap={3} alignItems="center">
                 <Typography level="body-lg" textAlign="center" width={1}>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Fuga iste ex velit, cupiditate officiis distinctio beatae
-                    quisquam molestias suscipit atque. Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Sequi repellat enim
-                    molestias minus tempore ratione at sint et itaque
-                    aspernatur!
+                    Ready to turn your web project ideas into reality? Let's
+                    collaborate and bring your vision to life. Reach out to me,
+                    and let's start building something amazing together. I'm
+                    just a click away, so don't hesitate to get in touch!
                 </Typography>
-                <Stack direction="row" sx={(theme) => ({
-                    [theme.breakpoints.up("md")]: {display: "none"}
-                })}>
+                <Stack
+                    direction="row"
+                    sx={(theme) => ({
+                        [theme.breakpoints.up("md")]: { display: "none" },
+                    })}
+                >
                     <Link href="https://github.com/dredawkins11">
                         <IconButton>
                             <GitHub />
@@ -67,7 +57,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                     </Link>
                 </Stack>
                 <Link href="mailto:dredawkins11@gmail.com">
-                <Button>Reach Out</Button>
+                    <Button>Reach Out</Button>
                 </Link>
             </Stack>
         </Box>

@@ -32,8 +32,8 @@ const theme = extendTheme({
                     "900": "#2f0417",
                 },
                 neutral: {
-                    "plainHoverColor": "var(--joy-palette-primary-400)"
-                }
+                    plainHoverColor: "var(--joy-palette-primary-400)",
+                },
             },
         },
     },
@@ -62,13 +62,18 @@ const theme = extendTheme({
             },
         },
         JoyLink: {
-            styleOverrides:{
-                root: ({theme}) => ({
-                    color: theme.vars.palette.text.primary,
+            styleOverrides: {
+                root: ({ theme }) => ({
                     "&:hover": {
-                        transform: `translateY(-${theme.spacing(.5)})`,
-                        color: theme.vars.palette.neutral.plainHoverColor,
                         textDecorationLine: "none",
+                        transform: `translateY(-${theme.spacing(0.5)})`,
+                        color: theme.vars.palette.neutral.plainHoverColor,
+                    },
+                    "& .MuiTypography-root:hover": {
+                        color: theme.vars.palette.neutral.plainHoverColor,
+                    },
+                    "& .MuiTypography-root": {
+                        color: theme.vars.palette.text.primary,
                     },
                 }),
             },
@@ -77,17 +82,25 @@ const theme = extendTheme({
             },
         },
         JoyIconButton: {
-            styleOverrides:{
-                root: {"&:hover": {background: "none"}}
-            }
-        }
+            styleOverrides: {
+                root: { "&:hover": { background: "none" } },
+            },
+        },
     },
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <CssVarsProvider defaultMode="system" theme={theme}>
-            <GlobalStyles styles={{ "*": {transition: "transform .2s"} ,html: { scrollBehavior: "smooth" } }} />
+            <GlobalStyles
+                styles={(theme) => ({
+                    "*": { transition: "transform .2s" },
+                    html: { scrollBehavior: "smooth" },
+                    "span.MuiTypography-root": {
+                        color: theme.vars.palette.primary[400],
+                    },
+                })}
+            />
             <CssBaseline />
             <App />
         </CssVarsProvider>
