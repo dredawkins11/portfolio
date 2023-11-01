@@ -225,6 +225,8 @@ const particleSystem: ParticleSystem = {
     },
     handleTouch() {
         if (this.currentRipple[this.mouse.vx] != undefined) {
+            // console.log(this.mouse);
+            
             this.currentRipple[this.mouse.vx][this.mouse.vy] = 3;
         }
     },

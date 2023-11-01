@@ -33,7 +33,6 @@ const Background = () => {
                 left: "50%",
                 top: "50%",
                 transform: "translate(-50%, -50%)",
-                border: "solid red 1px",
                 zIndex: 0,
             }}
         >

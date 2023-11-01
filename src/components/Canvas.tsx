@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef } from "react";
 import Particles from "../utils/particles";
 import { useTheme } from "@mui/joy";
 
-
 interface CanvasProps {
     width: number;
     height: number;
@@ -11,7 +10,7 @@ interface CanvasProps {
 
 const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const theme = useTheme()
+    const theme = useTheme();
     const draw = useCallback(
         (ctx: CanvasRenderingContext2D) => {
             const particles = Particles.particleList;
@@ -62,10 +61,10 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     };
 
     useEffect(() => {
-        window.addEventListener("mousedown", () => handleMouseDown());
-        window.addEventListener("mouseup", () => handleMouseUp());
-        window.addEventListener("mousemove", (e) => handleMouseMove(e));
-        window.addEventListener("touchend", (e) => handleTouch(e));
+        window.addEventListener("mousedown", handleMouseDown);
+        window.addEventListener("mouseup", handleMouseUp);
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("touchend", handleTouch);
 
         const canvas = canvasRef.current;
         const context = canvas?.getContext("2d", { willReadFrequently: true });
@@ -79,7 +78,13 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
         };
         const interval = setInterval(render, 30);
         render();
-        return () => clearInterval(interval);
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener("mousedown", handleMouseDown);
+            window.removeEventListener("mouseup", handleMouseUp);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("touchend", handleTouch);
+        };
     });
 
     return (
