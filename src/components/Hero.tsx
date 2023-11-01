@@ -1,7 +1,7 @@
 import { Box, Stack, Typography, styled } from "@mui/joy";
 import { forwardRef } from "react";
 
-const Hero = forwardRef<HTMLDivElement>((props, ref) => {
+const Hero = forwardRef<HTMLDivElement>((_, ref) => {
     const Letter = styled(Typography)(({ theme }) => ({
         fontSize: "5rem",
         fontWeight: 100,

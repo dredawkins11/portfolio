@@ -11,5 +11,4 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly'
     }
   },
-  base: "https://dredawkins11.github.io/portfolio"
 })

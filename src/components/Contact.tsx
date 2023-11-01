@@ -2,7 +2,7 @@ import { GitHub, LinkedIn } from "@mui/icons-material";
 import { Box, Button, IconButton, Link, Stack, Typography } from "@mui/joy";
 import { forwardRef } from "react";
 
-const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+const Contact = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <Box
             ref={ref}

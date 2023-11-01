@@ -1,7 +1,7 @@
 import { Box, Card, Stack, Typography } from "@mui/joy";
 import { forwardRef } from "react";
 
-const About = forwardRef<HTMLDivElement>((props, ref) => {
+const About = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <Box
             ref={ref}

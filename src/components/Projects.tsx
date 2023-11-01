@@ -48,7 +48,7 @@ const ProjectCard = styled(Card)(({ theme }) => ({
     },
 }));
 
-const Projects = forwardRef<HTMLDivElement>((props, ref) => {
+const Projects = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <Box
             ref={ref}
