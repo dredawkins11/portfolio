@@ -44,6 +44,7 @@ type ParticleSystem = {
     handleMouseDown: () => void;
     handleMouseUp: () => void;
     handleMove: (x: number, y: number, bounds: DOMRect) => void;
+    handleTouch: () => void
 };
 
 const particleSystem: ParticleSystem = {

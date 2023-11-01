@@ -1,15 +1,11 @@
-import { Menu } from "@mui/icons-material";
 import {
     Box,
     Button,
-    Drawer,
-    IconButton,
     Link,
     Stack,
     Typography,
     styled,
 } from "@mui/joy";
-import { useState } from "react";
 
 interface NavBarProps {
     onScroll: (section: "hero" | "about" | "projects" | "contact") => void;

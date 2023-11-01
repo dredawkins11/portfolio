@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import Particles from "../utils/particles";
+import { useTheme } from "@mui/joy";
 
-import { useTheme } from "@emotion/react";
 
 interface CanvasProps {
     width: number;
@@ -11,8 +11,7 @@ interface CanvasProps {
 
 const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const theme = useTheme();
-
+    const theme = useTheme()
     const draw = useCallback(
         (ctx: CanvasRenderingContext2D) => {
             const particles = Particles.particleList;
@@ -50,14 +49,15 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     };
 
     const handleTouch = (e: TouchEvent) => {
-        if (containerBounds != undefined) console.log(e);
-        if (e.changedTouches.length > 0) {
-            Particles.handleMove(
-                e.changedTouches[0].clientX,
-                e.changedTouches[0].clientY,
-                containerBounds
-            );
-            Particles.handleTouch();
+        if (containerBounds != undefined) {
+            if (e.changedTouches.length > 0) {
+                Particles.handleMove(
+                    e.changedTouches[0].clientX,
+                    e.changedTouches[0].clientY,
+                    containerBounds
+                );
+                Particles.handleTouch();
+            }
         }
     };
 

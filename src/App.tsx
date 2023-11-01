@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 import { Box, Stack } from "@mui/joy";
 import { useRef } from "react";
-import Cursor from "./assets/cursor.svg";
+import Cursor  from "./assets/cursor.svg";
 
 function App() {
     const scrollRefs = {
