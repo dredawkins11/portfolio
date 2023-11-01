@@ -25,17 +25,28 @@
 
 import { Launch, GitHub } from "@mui/icons-material";
 import { Box, Card, IconButton, Stack, Typography, styled } from "@mui/joy";
+import { forwardRef } from "react";
 
 const ProjectCard = styled(Card)(({ theme }) => ({
-    aspectRatio: "1/1",
-    width: "30%",
+    flexGrow: 1,
     backgroundColor: theme.palette.background.backdrop,
     backdropFilter: "blur(3px)",
+    [theme.breakpoints.up("md")]: {
+        aspectRatio: "1/1",
+        width: "30%",
+    },
 }));
 
-const Projects = () => {
+const Projects = forwardRef<HTMLDivElement>((props, ref) => {
     return (
-        <Box width={1} display="flex" flexDirection="column" alignItems="center">
+        <Box
+            ref={ref}
+            width={1}
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            paddingBottom="20vh"
+        >
             <Stack
                 direction="row"
                 alignItems="center"
@@ -44,15 +55,18 @@ const Projects = () => {
                 sx={{
                     width: 1,
                     justifyContent: "space-between",
-                    "& div": { flexGrow: 1, height: "1px", border: "none", borderTop: "solid 1px " },
+                    "& div": {
+                        flexGrow: 1,
+                        height: "1px",
+                        border: "none",
+                        borderTop: "solid 1px ",
+                    },
                 }}
             >
-                <Typography level="h1" >
-                    PROJECTS
-                </Typography>
+                <Typography level="h1">PROJECTS</Typography>
                 <div></div>
             </Stack>
-            <Box display="flex" gap={2}>
+            <Box display="flex" gap={2} flexWrap="wrap">
                 <ProjectCard>
                     <Stack flexDirection="row" justifyContent="space-between">
                         <Typography level="body-lg" color="neutral">
@@ -131,5 +145,5 @@ const Projects = () => {
             </Box>
         </Box>
     );
-};
+});
 export default Projects;

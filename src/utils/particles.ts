@@ -1,7 +1,6 @@
 const SIZE = 1,
     SPACING = 12,
     DAMPING = 0.9,
-    DEFAULT_SCALE = 2,
     SCALE_MAX = 5,
     SCALE_FACTOR = 3,
     SCALE_MIN = 0.5;
@@ -69,28 +68,20 @@ const particleSystem: ParticleSystem = {
     },
     step() {
         this.calculateRipple();
-        this.wavePosition += .5;
-        const maxPosition = Math.sqrt(Math.pow(this.rows, 2) + Math.pow(this.columns, 2))
+        this.wavePosition += 0.5;
+        const maxPosition = Math.sqrt(
+            Math.pow(this.rows, 2) + Math.pow(this.columns, 2)
+        );
         if (this.wavePosition > maxPosition)
             this.wavePosition = -(maxPosition * 0.1);
 
-        // console.log(this.mouse);
-        // const columnHeight = this.width / this.columns;
-        // const rowHeight = this.height / this.rows;
-        // console.log((performance.now() - this.mouseLastUpdate) / 1000);
-
-        // if ((performance.now() - this.mouseLastUpdate) / 10 > .01) this.currentRipple[this.mouse.vx-1][this.mouse.vy-1] = .5;
         const x = this.mouse.vx - 1;
         const y = this.mouse.vy - 1;
-        if (this.mouse.down) {
-            this.currentRipple[x][y] = 10;
-        } else {
-            this.currentRipple[x][y] = 1;
+        if (this.currentRipple[x] != undefined) {
+            if (this.mouse.down) {
+                this.currentRipple[x][y] = 3;
+            }
         }
-        // this.currentRipple[x+1][y] = 1
-        // this.currentRipple[x-1][y] = 1
-        // this.currentRipple[x][y+1] = 1
-        // this.currentRipple[x][y-1] = 1
 
         // RIPPLE
         this.particleList.forEach((particle) => {
@@ -98,7 +89,8 @@ const particleSystem: ParticleSystem = {
             if (this.onWave(particle)) {
                 const x = particle.vx;
                 const y = particle.vy;
-                this.currentRipple[x][y] += 0.1 * ((maxPosition - this.wavePosition) / maxPosition);
+                this.currentRipple[x][y] +=
+                    0.1 * ((maxPosition - this.wavePosition) / maxPosition);
             }
 
             // Set scale based on the ripple value at that coord
@@ -131,7 +123,7 @@ const particleSystem: ParticleSystem = {
                 vy: 0,
                 x: 0,
                 y: 0,
-                scale: DEFAULT_SCALE,
+                scale: SCALE_MIN,
             };
             const particleTotalSize = SPACING + SIZE * 2;
             const x =

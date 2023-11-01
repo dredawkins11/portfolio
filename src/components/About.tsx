@@ -1,10 +1,13 @@
 import { Box, Card, Stack, Typography } from "@mui/joy";
+import { forwardRef } from "react";
 
-const About = () => {
+const About = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Box
+            ref={ref}
             width={1}
             display="flex"
+            paddingBottom="20vh"
             flexDirection="column"
             alignItems="center"
         >
@@ -41,17 +44,25 @@ const About = () => {
                         Here's what I've working with lately:
                     </Typography>
                     <Box sx={(theme) => ({
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr 1fr",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        textAlign: "center",
                         flexWrap: "wrap",
-                        gap: 3,
+
                         "& .MuiTypography-root": {
-                            // textAlign: "center",
-                            minWidth: .2,
+                            width: "30%",
+                            marginTop: 1,
+                            flexGrow: 1,
                             fontWeight: "bold",
+                            [theme.breakpoints.down("md")]: {
+                                width: "50%"
+                            },
+                            [theme.breakpoints.down("sm")] : {
+                                fontSize: theme.fontSize.sm
+                            },
 
                             "&::before": {
-                                content: "'▹'",
+                                content: "'▹ '",
                                 color: theme.vars.palette.primary.plainColor
                             }
                         }
@@ -67,5 +78,5 @@ const About = () => {
             </Card>
         </Box>
     );
-};
+});
 export default About;

@@ -1,60 +1,55 @@
-import HeroSVG from "./assets/port-hero.svg?react";
-
+import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import SideDecorations from "./components/SideDecorations";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Background from "./components/Background";
-
-import { Box, Stack, Typography } from "@mui/joy";
 import Footer from "./components/Footer";
 
+import { Box, Stack } from "@mui/joy";
+import { useRef } from "react";
+import Cursor from "./assets/cursor.svg";
+
 function App() {
+    const scrollRefs = {
+        hero: useRef<HTMLDivElement>(null),
+        about: useRef<HTMLDivElement>(null),
+        projects: useRef<HTMLDivElement>(null),
+        contact: useRef<HTMLDivElement>(null),
+    };
+
+    const handleScroll = (section: "hero" | "about" | "projects" | "contact") =>
+        scrollRefs[section].current?.scrollIntoView(
+            section == "hero" ? true : false
+        );
 
     return (
-        <Box sx={(theme) => ({ backgroundColor: theme.vars.palette.background.body })}>
+        <Box
+            sx={(theme) => ({
+                backgroundColor: theme.vars.palette.background.body,
+                userSelect: "none",
+                cursor: `url(${Cursor}) 5 5, auto`,
+            })}
+        >
             <Background />
-            
+            <NavBar onScroll={handleScroll} />
+            <SideDecorations />
             <Stack
-                sx={(theme)=>({
+                sx={(theme) => ({
                     width: "60%",
+                    [theme.breakpoints.down("md")]: { width: "80%" },
                     margin: "auto",
-                    gap: "50vh",
+                    gap: "20vh",
                     background: theme.vars.palette.background.backdrop,
-                    alignItems:"center",
+                    alignItems: "center",
                     zIndex: 1,
                 })}
             >
-                <Box
-                    width="100%"
-                    height="110vh"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                >
-                    <Box
-                        display="flex"
-                        flexDirection="column"
-                        sx={{
-                            position: "relative",
-                            top: "-10%",
-                            "& svg": {
-                                width: "33vw",
-                                height: "11vw",
-                            },
-                        }}
-                    >
-                        <HeroSVG />
-                        <Stack direction="row" justifyContent="space-between">
-                            <Typography level="h4">FULL</Typography>
-                            <Typography level="h4">STACK</Typography>
-                            <Typography level="h4">WEB</Typography>
-                            <Typography level="h4">DEVELOPMENT</Typography>
-                        </Stack>
-                    </Box>
-                </Box>
-                <About />
-                <Projects />
-                <Contact />
+                <Hero ref={scrollRefs.hero} />
+                <About ref={scrollRefs.about} />
+                <Projects ref={scrollRefs.projects} />
+                <Contact ref={scrollRefs.contact} />
                 <Footer />
             </Stack>
         </Box>

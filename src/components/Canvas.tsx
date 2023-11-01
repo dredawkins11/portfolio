@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import Particles from "../utils/particles";
 
-import classes from "../styles/Canvas.module.scss"
 import { useTheme } from "@emotion/react";
 
 interface CanvasProps {
@@ -10,12 +9,9 @@ interface CanvasProps {
     containerBounds: DOMRect | undefined;
 }
 
-const SIZE = 1;
-
 const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const theme = useTheme()
-    console.log(theme.palette.text.primary);
     
 
     const draw = useCallback(
@@ -28,7 +24,7 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
                 ctx.arc(
                     particle.x,
                     particle.y,
-                    SIZE * particle.scale,
+                    1 * particle.scale,
                     0,
                     2 * Math.PI
                 );
@@ -38,7 +34,7 @@ const Canvas = ({ width, height, containerBounds }: CanvasProps) => {
 
             Particles.step();
         },
-        [width, height]
+        [width, height, theme.palette.neutral]
     );
 
     const handleMouseDown = () => {

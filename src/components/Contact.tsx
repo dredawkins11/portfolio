@@ -7,14 +7,17 @@ import {
     Textarea,
     Typography,
 } from "@mui/joy";
+import { forwardRef } from "react";
 
-const Contact = () => {
+const Contact = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Box
+            ref={ref}
             width={1}
             display="flex"
             flexDirection="column"
             alignItems="stretch"
+            paddingBottom="20vh"
         >
             <Stack
                 direction="row"
@@ -51,5 +54,5 @@ const Contact = () => {
             </Stack>
         </Box>
     );
-};
+});
 export default Contact;

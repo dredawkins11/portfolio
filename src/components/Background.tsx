@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Canvas from "./Canvas";
-
-import classes from "../styles/Background.module.scss";
+import { Box } from "@mui/joy";
 
 const Background = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    // const [containerBounds, setContainerBounds] = useState<DOMRect | null>(null)
 
     useEffect(() => {
         handleResize();
@@ -25,17 +23,26 @@ const Background = () => {
     }
 
     return (
-        <div
-            className={classes.container}
+        <Box
             ref={containerRef}
             onResize={handleResize}
+            sx={{
+                position: "fixed",
+                width: "110vw",
+                height: "110vh",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                border: "solid red 1px",
+                zIndex: 0,
+            }}
         >
             <Canvas
                 width={width}
                 height={height}
                 containerBounds={containerRef.current?.getBoundingClientRect()}
             />
-        </div>
+        </Box>
     );
 };
 
