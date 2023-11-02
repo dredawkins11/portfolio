@@ -7,6 +7,8 @@ import {
     styled,
 } from "@mui/joy";
 
+import Resume from "../assets/resume.pdf"
+
 interface NavBarProps {
     onScroll: (section: "hero" | "about" | "projects" | "contact") => void;
 }
@@ -50,7 +52,7 @@ const NavBar = ({ onScroll }: NavBarProps) => {
                 <NavLink onClick={() => onScroll("about")}>About</NavLink>
                 <NavLink onClick={() => onScroll("projects")}>Projects</NavLink>
                 <NavLink onClick={() => onScroll("contact")}>Contact</NavLink>
-                <Link>
+                <Link href={Resume}>
                     <Button variant="outlined" size="sm">
                         RESUME
                     </Button>
