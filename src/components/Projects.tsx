@@ -135,7 +135,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                             complex tasks. The app is modeled to represent tasks
                             as 'Quests', and it will break down those quests to
                             make them simpler to complete. The app leverages
-                            OpenAI's ChatGBT to generate content.
+                            OpenAI's Chat GPT to generate content.
                         </Typography>
                     </Box>
                     <Stack direction="row" justifyContent="space-between">
