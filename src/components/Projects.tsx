@@ -116,7 +116,7 @@ const Projects = forwardRef<HTMLDivElement>((_, ref) => {
                             01.
                         </Typography>
                         <Box>
-                            <Link href="https://stellar-sherbet-616974.netlify.app/">
+                            <Link href="https://questline.netlify.app/">
                                 <IconButton>
                                     <Launch />
                                 </IconButton>
