@@ -1,5 +1,6 @@
 import { Box, Card, Stack, Typography } from "@mui/joy";
 import { forwardRef } from "react";
+import SectionHeader from "./ui/SectionHeader";
 
 const About = forwardRef<HTMLDivElement>((_, ref) => {
     return (
@@ -11,25 +12,7 @@ const About = forwardRef<HTMLDivElement>((_, ref) => {
             flexDirection="column"
             alignItems="center"
         >
-            <Stack
-                direction="row"
-                alignItems="center"
-                mb={3}
-                gap={3}
-                sx={{
-                    width: 1,
-                    justifyContent: "space-between",
-                    "& div": {
-                        flexGrow: 1,
-                        height: "1px",
-                        border: "none",
-                        borderTop: "solid 1px ",
-                    },
-                }}
-            >
-                <div></div>
-                <Typography level="h1">ABOUT</Typography>
-            </Stack>
+            <SectionHeader text="ABOUT" />
             <Card sx={{ padding: 3 }}>
                 <Stack gap={3}>
                     <Typography level="body-lg">

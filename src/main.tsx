@@ -11,13 +11,13 @@ import {
 const theme = extendTheme({
     fontFamily: {
         body: "'Urbanist', var(--joy-fontFamily-fallback)",
-        display: "Urbanist, var(--joy-fontFamily-fallback)",
+        display: "'Urbanist', var(--joy-fontFamily-fallback)",
     },
     colorSchemes: {
         dark: {
             palette: {
                 background: {
-                    backdrop: "rgba(0,0,0,0.8)",
+                    body: "#0A090C"
                 },
                 primary: {
                     "50": "#fde7f1",
@@ -41,8 +41,10 @@ const theme = extendTheme({
         JoyCard: {
             styleOverrides: {
                 root: ({ theme }) => ({
-                    backgroundColor: theme.palette.background.backdrop,
-                    backdropFilter: "blur(3px)",
+                    background: "none",
+                    backdropFilter: "blur(8px)",
+                    border: "solid 1px transparent",
+                    borderImage: `linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.5) 50%, rgba(0,0,0,0) 100%) 1 stretch`
                 }),
             },
         },

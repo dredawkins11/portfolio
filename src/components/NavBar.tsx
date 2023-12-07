@@ -25,26 +25,24 @@ const NavLink = styled(Typography)(({ theme }) => ({
 const NavBar = ({ onScroll }: NavBarProps) => {
     return (
         <Box
-            position="fixed"
+            position="absolute"
             sx={(theme) => ({
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
                 width: 1,
                 paddingX: 3,
-                paddingY: 1,
-                backgroundColor: theme.palette.background.backdrop,
-                backdropFilter: "blur(3px)",
+                paddingY: 2,
+                background: "none",
                 zIndex: 100,
             })}
         >
-            <Typography level="h1">DD</Typography>
             <Stack
                 direction="row"
                 flexGrow={1}
                 gap={5}
                 sx={{
-                    justifyContent: "flex-end",
+                    justifyContent: "space-around",
                     alignItems: "center",
                 }}
             >
@@ -52,11 +50,11 @@ const NavBar = ({ onScroll }: NavBarProps) => {
                 <NavLink onClick={() => onScroll("about")}>About</NavLink>
                 <NavLink onClick={() => onScroll("projects")}>Projects</NavLink>
                 <NavLink onClick={() => onScroll("contact")}>Contact</NavLink>
-                <Link href={Resume}>
+                {/* <Link href={Resume}>
                     <Button variant="outlined" size="sm">
                         RESUME
                     </Button>
-                </Link>
+                </Link> */}
             </Stack>
         </Box>
     );

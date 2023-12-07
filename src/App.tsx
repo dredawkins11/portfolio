@@ -37,11 +37,11 @@ function App() {
             <SideDecorations />
             <Stack
                 sx={(theme) => ({
-                    width: "60%",
+                    width: "70%",
                     [theme.breakpoints.down("md")]: { width: "80%" },
                     margin: "auto",
                     gap: "20vh",
-                    background: theme.vars.palette.background.backdrop,
+                    // background: theme.vars.palette.background.backdrop,
                     alignItems: "center",
                     zIndex: 1,
                 })}
