@@ -6,21 +6,7 @@ import {
     Link,
     Stack,
     Typography,
-    styled,
 } from "@mui/joy";
-
-const ProjectCard = styled(Card)(({ theme }) => ({
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    flexGrow: 1,
-    backgroundColor: "none",
-    backdropFilter: "blur(3px)",
-    [theme.breakpoints.up("md")]: {
-        aspectRatio: "3/1",
-        width: "30%",
-    },
-}));
 
 interface ProjectProps {
     index: number;

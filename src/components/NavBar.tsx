@@ -1,13 +1,11 @@
 import {
     Box,
-    Button,
-    Link,
     Stack,
     Typography,
     styled,
 } from "@mui/joy";
 
-import Resume from "../assets/resume.pdf"
+// import Resume from "../assets/resume.pdf"
 
 interface NavBarProps {
     onScroll: (section: "hero" | "about" | "projects" | "contact") => void;
@@ -26,7 +24,7 @@ const NavBar = ({ onScroll }: NavBarProps) => {
     return (
         <Box
             position="absolute"
-            sx={(theme) => ({
+            sx={{
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
@@ -35,7 +33,7 @@ const NavBar = ({ onScroll }: NavBarProps) => {
                 paddingY: 2,
                 background: "none",
                 zIndex: 100,
-            })}
+            }}
         >
             <Stack
                 direction="row"

@@ -40,12 +40,12 @@ const theme = extendTheme({
     components: {
         JoyCard: {
             styleOverrides: {
-                root: ({ theme }) => ({
+                root: {
                     background: "none",
                     backdropFilter: "blur(8px)",
                     border: "solid 1px transparent",
                     borderImage: `linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.5) 50%, rgba(0,0,0,0) 100%) 1 stretch`
-                }),
+                },
             },
         },
         JoyInput: {
